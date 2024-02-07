@@ -75,6 +75,9 @@ class FilamentSwiperResource extends Resource
                 TextEntry::make('name'),
                 SwiperImageEntry::make('images')
                     ->columnSpanFull()
+                    ->height('400px')
+                    ->pagination()
+                    ->paginationClickable()
             ]);
     }
 }
