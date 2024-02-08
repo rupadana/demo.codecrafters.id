@@ -71,11 +71,17 @@ class FilamentSwiperResource extends Resource
     public static function infolist(Infolist $infolist): Infolist
     {
         return $infolist
+        ->state([
+            'custom_images' => [
+                'https://res.cloudinary.com/rupadana/image/upload/v1705144717/Screenshot_2024-01-13_at_19.18.11_llse31.png',
+                'https://res.cloudinary.com/rupadana/image/upload/v1705144717/Screenshot_2024-01-13_at_19.18.11_llse31.png'
+            ]
+        ])
             ->schema([
                 TextEntry::make('name'),
-                SwiperImageEntry::make('images')
+                SwiperImageEntry::make('custom_images')
                     ->columnSpanFull()
-                    ->height('400px')
+                    ->height('500px')
                     ->pagination()
                     ->paginationClickable()
             ]);
